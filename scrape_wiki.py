@@ -165,13 +165,6 @@ fetch_mobs()
 fetch_dimension_blocks(NETHER_URL)
 fetch_dimension_blocks(END_URL)
 
-with open("debug.txt", "w", encoding="utf-8") as f:
-    for k, v in sorted(name_to_id_map.items()):
-        categories = id_to_categories_map.get(v, [])
-        if len(categories) > 0:
-            f.write(k + " (" + v + ") >>> " + (",".join(categories))+"\n")
-    f.close()
-
 with open("output.csv", "w", encoding="utf-8") as f:
     for k, v in sorted(id_to_categories_map.items()):
         f.write(",".join([k] + v)+"\n")
